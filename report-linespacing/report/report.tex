@@ -9,6 +9,8 @@
 \usepackage{multirow}
 \usepackage{subcaption}
 \graphicspath{ {images/} }
+\usepackage{setspace}
+\onehalfspacing
 
 
 
@@ -30,14 +32,14 @@
 \textsc{\LARGE Tata Institute of Fundamental Research}\\[1.5cm] 
 %\textsc{\Large TIFR Graduate School Project Report, June 2018}\\[0.5cm] % Major heading such as course name
 \textsc{\large Graduate School Project Report}\\[0.5cm] % Minor heading such as course title
-\vspace{4cm}
+\vspace{3cm}
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\HRule \\[0.4cm]
-{ \huge \bfseries Comparison of CORSIKA hadronic interaction generators with GRAPES-3 data}\\[0.4cm] % Title of your document
-\HRule \\[1.5cm]
+\HRule 
+{ \huge \bfseries Comparison of CORSIKA hadronic interaction generators with  GRAPES-3 data\\} % Title of your document
+\HRule \\[3.0cm]
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
@@ -70,7 +72,8 @@ DHEP, TIFR, Mumbai
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+{\large June 10, 2019}\\[2cm]
+%{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
@@ -95,50 +98,40 @@ In GRAPES-3 experiment, hadronic interaction generators of CORSIKA simulation pr
 
 
 \section{Introduction}
-A lot of studies have been done on cosmic rays but we still do not fully understand the nature of their sources, their composition, and acceleration mechanism. The energies of cosmic rays range from less than 1 GeV upto $\sim$10$^{20}$eV.  
-GRAPES-3 experiment is a scintillator detector array located in Ooty. \cite{gupta} It is designed to study the primary cosmic rays and gamma rays in TeV-PeV energy range. The study of cosmic ray energy spectrum and nuclear composition is one of the primary objectives of GRAPES-3 experiment. To derive the nuclear composition of primary cosmic rays (PCRs), the identification of primary particle and it's incident energy is necessary, which is done by simulating showers with Monte Carlo simulators.
+A lot of studies have been done on cosmic rays but we still do not fully understand the nature of their sources, their composition, and acceleration mechanism. The energies of cosmic rays range from less than $\sim$10$^{9}$eV upto $\sim$10$^{20}$eV.  
+GRAPES-3 is an extensive air shower experiment consisting of scintillator detector as well as a large area muon detector, located in Ooty. \cite{gupta} It is designed to study the primary cosmic rays and gamma rays in TeV-PeV energy range. The study of cosmic ray energy spectrum and nuclear composition is one of the primary objectives of GRAPES-3 experiment. In order to derive the nuclear composition of primary cosmic rays (PCRS), muon content corresponding to  the primary particle is important, which can be studied by simulating shower by using Monte Carlo methods. 
 
-In GRAPES-3 experiment, CORSIKA simulation program is used to simulate the air showers. SIBYLL 2.3c and QGSJETII-04 are two of the high energy hadronic interaction generators packaged into CORSIKA-7.69 whose parameters are tuned to the LHC data with center-of-mass energies $\sqrt{s}$ = 0.9 TeV and 7 TeV,\cite{mthesis} hence called post-LHC generators. Proton-Proton collision energy $\sqrt{s}$ = 7 TeV corresponds to about 2.5 $\times 10^{16}$ eV in the labortatory frame. The predictions made by different hadronic interaction generators are highly dependent on the different assumptions that the generators are based upon. Therefore, it's very important to find out the generator whose predictions match best with the GRAPES-3 data. 
+In GRAPES-3 experiment, CORSIKA simulation program is used to simulate the air showers. SIBYLL 2.3c and QGSJETII-04 are two of the high energy hadronic interaction generators packaged into CORSIKA-7.69 whose parameters are tuned to the LHC data with center-of-mass energies $\sqrt{s}$ = 0.9 TeV and 7 TeV,\cite{mthesis}. Proton-Proton collision energy $\sqrt{s}$ = 7 TeV corresponds to about 2.5 $\times 10^{16}$ eV in the labortatory frame. The predictions made by different hadronic interaction generators are highly dependent on the different assumptions that the generators are based upon. Therefore, it's very important to find out the generator whose predictions match best with the GRAPES-3 data. 
 
-This study presents the comparison of the two high energy hadronic interaction generators $-$ SIBYLL 2.3c and QGSJETII-04,  on the basis of muon multiplicity distributions (MMDs). Monoenergetic showers were simulated for the following primaries: H, He, N, Al, and Fe at energies: 10 TeV, 100 TeV, and 1000 TeV. Low energy hadronic interactions were treated by pairing FLUKA-2011 package with high energy generators. Muon multiplicity was observed to be higher in QGSJETII-FLUKA as compared to that of SIBYLL-FLUKA, for all primary energies and for all primaries.
+This study presents the comparison of the two high energy hadronic interaction generators $-$ SIBYLL 2.3c and QGSJETII-04,  on the basis of muon multiplicity distributions (MMDs). Low energy hadronic interactions were treated by pairing FLUKA-2011 package with high energy generators. Monoenergetic showers were simulated for the following primaries: H, He, N, Al, and Fe at energies: 10 TeV, 100 TeV, and 1000 TeV. These primaries were chosen because they cover most of the primary range in terms of number of nuclei. Muon multiplicity is expected to vary widely over the range of chosen primaries and also with primary energy. Therefore, muon multiplicity can be a good parameter for composition studies. 
 
-The comparison of Pre-LHC (SIBYLL 2.1 and QGSJETII-03) and Post-LHC (SIBYLL 2.3c and QGSJETII-04) generators was also done taking proton induced showers at energies: 10 TeV, 100 TeV and 1000 TeV. The post-LHC generators produced more higher median number of muons per shower as compared to pre-LHC generators.
+The comparison of Pre-LHC (SIBYLL 2.1 and QGSJETII-03) and Post-LHC (SIBYLL 2.3c and QGSJETII-04) generators was also done taking proton induced showers at energies: 10 TeV, 100 TeV and 1000 TeV. The post-LHC generators were expected to produce more muons per shower as compared to pre-LHC generators.
 
-Towards the end, proton induced showers generated by SIBYLL 2.1 (pre-LHC) paired with FLUKA-2011 for energy $63\times10^{12}$eV $< $ E $< 10^{15}$eV, and zenith angle $0^\circ<\theta<25^\circ$ and following E$^{-2.7}$ differential spectrum were analysed. The MMDs of this "spectrum data" for differential shower size (N$_e$) bins (bin size = 10$^{0.5}$) was compared to that of GRAPES-3 data for year 2014 (3 Jan. to 30 Dec.).  
-
-The MMDs of simulated spectrum data were not expected to match fully with that of experimental data because the experimental data is composed of showers induced by many type of primaries and not just protons\cite{tanaka}. In the low multiplicity regions of MMDs where contribution of  protons is more, the simulated data matches well with experimental data but suffers from poor statistics for higher shower size bins. The MMDs of simulation are expected to improve for the simulations done with post-LHC generator SIBYLL-2.3c because SIBYLL 2.3c was observed to produce about 19\% more muons than SIBYLL 2.1. Therefore, to compare the post-LHC combination of SIBYLL 2.3c and FLUKA in the same manner with GRAPES-3 data, the proton initiated showers were simulated for energy $10\times10^{12}$ eV $<$  E $<10,000\times10^{12}$ eV, and zenith angle $0^\circ<\theta<60^\circ$. This spectrum data would be analysed with the following cuts: $63\times10^{12}$ eV $<$  E $<1000\times10^{12}$ eV and zenith angle $0^\circ<\theta<25^\circ$. Post-LHC spectrum data is expected to give more muon content per shower as compared to that of pre-LHC spectrum data. Due to non-availablity of cluster facility present at Ooty because of some technical issues, the post-LHC spectrum data couldn't be analyzed yet and it is expected to be done when the cluster goes online again. 
+Towards the end, proton induced showers generated by SIBYLL 2.1 (pre-LHC) paired with FLUKA-2011 for energy $63.1\times10^{12}$eV $< $ E $< 10^{15}$eV, and zenith angle $0^\circ<\theta<25^\circ$ and following E$^{-2.7}$ differential spectrum were analysed. The MMDs of this spectrum data for differential shower size (N$_e$) bins (bin size = 10$^{0.5}$) was compared to that of GRAPES-3 data for year 2014 (3 Jan. to 30 Dec.). The MMDs of simulated spectrum data were not expected to match fully with that of experimental data because the experimental data is composed of showers induced by many type of primaries and not just protons\cite{tanaka}. Therefore, only in the low multiplicity regions of MMDs, where contribution of  protons is more, the simulated data were to be compared with experimental data. The MMDs of simulation were expected to improve for the simulations done with post-LHC generator SIBYLL-2.3c.  Therefore, to compare the post-LHC combination of SIBYLL 2.3c and FLUKA in the same manner with GRAPES-3 data, the proton initiated showers were simulated for energy $10\times10^{12}$ eV $<$  E $<10,000\times10^{12}$ eV, and zenith angle $0^\circ<\theta<60^\circ$. This spectrum data would be analysed with the following cuts: $63.1\times10^{12}$ eV $<$  E $< 10^{15}$ eV and zenith angle $0^\circ<\theta<25^\circ$. Since the analysis of such a large amount of data requires a lot of computation time and resources, the analysis of post-LHC spectrum data is currenly in progress.
 
  
-\section{Cosmic Rays}
-Cosmic ray are charged particles from extra-terrestrial origin bombarding Earth's atmosphere. In the absence of direct detection of PCR sources, owing to their deflection in intervening the galactic magnetic field, precise measurements of energy spectra of different nuclear components over a wide energy range could be helpful in deciphering the process of their acceleration and propagation\cite{anuj}. 
-
-Direct detection of cosmic rays have been made for primary energies upto $\leq$300 TeV \cite{tanaka} via satellites, balloon experiments etc. This constraint is due to steeply falling flux of CRs added with the measurements being performed with the small size detector with a limited exposure time. Therefore, measurements at higher energy are performed with ground based detectors having large effective surface area. 
-
+\section{Cosmic rays}
+Cosmic rays (CRs) are high energy charged particles, originating in outer space, that travel at nearly the speed of light and strike the Earth from all directions. The CRs mostly contain protons (88\%), helium (9\%), nuclei of heavier particles and a minute fraction are high energy electrons, positrons. On the Earth’s surface, we hardly detect any primary cosmic rays because most of them interact with the Earth’s atmosphere. With the help of high altitude balloon experiments and space-borne detectors, these primary CRs can be detected directly. Direct detection of cosmic rays have been made for primary energies upto $\sim$100 TeV \cite{anuj}. This constraint is due to steeply falling flux of CRs added with the measurements being performed with the small size detector with a limited exposure time. Therefore, measurements at higher energy are performed with ground based detectors having large effective surface area. 
 The detected particles mainly include muons, electrons, photons,  and hadrons. The information about muon content of the shower can be used to derive the mass composition of PCRs\cite{tanaka}. The muon content of a shower can also be used to distinguish between cosmic ray induced showers and gamma ray induced showers. 
 
-\section{GRAPES-3 Detector Array}
+\section{GRAPES-3 detector array}
 The GRAPES-3 (Gamma Ray Astronomy at PeV EnergieS-Phase 3) experiment is designed to observe extensive air showers (EAS) in the TeV-PeV energy range\cite{gupta}. The objectives of GRAPES-3 are to probe the acceleration and propagation of high energy particles in the universe through energy spectrum and composition measurements of cosmic rays (PCRs), multi-TeV $\gamma$-ray observation, solar phenomena and atmospheric acceleration. The experimental setup is established in Ooty, at an altitude of 2200 m above sea level. The GRAPES-3 experiment \cite{anuj}\cite{gupta} consists of an array of $\sim$400 plastic scintillator detectors  and a 560 m$^2$ area tracking muon detector as shown in Figure \ref{fig:array-map}. 
 
 \begin{figure}[h]
-\begin{subfigure}{0.245\textwidth}
-\includegraphics[width=0.9\linewidth, height=3cm]{array-map} 
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4.4cm]{array-map} 
 \caption{Schematic of GRAPES-3 detector array}
 \label{fig:array-map}
 \end{subfigure}
-\begin{subfigure}{0.245\textwidth}
-\includegraphics[width=0.9\linewidth, height=3cm]{detector} 
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{detector} 
 \caption{Scintillator detector and muon station}
 \label{fig:detector}
 \end{subfigure}
-\begin{subfigure}{0.245\textwidth}
-\includegraphics[width=0.9\linewidth, height = 3cm]{mu-station} 
+\begin{subfigure}{0.32\textwidth}
+\includegraphics[width=0.9\linewidth, height=4cm]{mu-station} 
 \caption{Schematic of muon module}
 \label{fig:mu-station}
-\end{subfigure}
-\begin{subfigure}{0.245\textwidth}
-\includegraphics[width=0.9\linewidth, height = 3cm]{sc-detector}
-\caption{Schematic of scintillator detector}
-\label{fig:sc-detector}
 \end{subfigure}
 \caption{GRAPES-3 detector array}
 \label{fig:g3array}
@@ -149,7 +142,7 @@ The scintillator detectors (shown as filled triangles in Figure \ref{fig:array-m
 
 \section{Simulation of monoenergetic showers}
 
-For the treatment of low energy hadronic interactions, two low energy hadronic generators, namely FLUKA and GHEISHA, are commonly used. Table \ref{tab:fluka-gheisha} shows the difference in muon multiplicity produced by the two hadronic generators. Here, these were paired with SIBYLL 2.3c and QGSJETII-04 to treat high energy hadronic interactions. FLUKA combination gives higher muon multiplicity as compared to GHEISHA combination. In the earlier CORSIKA simulations, done for GRAPES-3 experiment, fluka was used as the low energy hadronic generator. So in this study also all the simulations were done using FLUKA as low energy hadronic generator. 
+For the treatment of low energy hadronic interactions, two low energy hadronic generators, namely FLUKA and GHEISHA, are commonly used. Table \ref{tab:fluka-gheisha} shows the difference in muon multiplicity produced by the two hadronic generators. Here, these were paired with SIBYLL 2.3c and QGSJETII-04 to treat high energy hadronic interactions. FLUKA combination gives higher muon multiplicity as compared to GHEISHA combination. In the earlier CORSIKA simulations, done for GRAPES-3 experiment, fluka was found to be more reliable as the low energy hadronic generator. So in this study also all the simulations were done using FLUKA as low energy hadronic generator. 
 
 \begin{table}
 \centering
@@ -170,9 +163,9 @@ QGSII-FLUKA  & 1200 & 250 & 20.8 \\
 \label{tab:fluka-gheisha}
 \end{table}
 
-A comparison between the two post-LHC hadronic interaction generators was done to see the characteristics of the two generators. The comparison was done on the basis of muon content produced by the two generators. The PCRs were assumed to be composed of five species\cite{tanaka}, protons (H, A = 1), helium (He, A = 4), nitrogen (N, A = 14), aluminum (Al, A = 27) and iron (Fe, A = 56). Heavier nuclei N, Al and Fe were used to represent light (C,N,O), medium (Mg, Al, Si) and heavy (Mn, Fe, Co) masses in PCRs. For each primary, monoenergetic showers with zenith angle = 0 were simulated at energy: 10 TeV, 100 TeV, and 1000 TeV. Comparison of muon multiplicity was made: 1) between the two generators, 2) between different primaries for each generator.
+A comparison between the two post-LHC hadronic interaction generators was done to see the characteristics of the two generators. The comparison was done on the basis of muon content produced by the two generators. The PCRs were assumed to be composed of five species\cite{tanaka}, Proton (H, A = 1), Helium (He, A = 4), Nitrogen (N, A = 14), Aluminum (Al, A = 27) and Iron (Fe, A = 56). Heavier nuclei N, Al and Fe were used to represent light (C,N,O), medium (Mg, Al, Si) and heavy (Mn, Fe, Co) masses in PCRs. For each primary, monoenergetic showers with zenith angle = 0 were simulated at energy: 10 TeV, 100 TeV, and 1000 TeV. Due to large amount of computation time and resources required to generate very high energy showers, 1000 TeV showers were generated for H, N, and Fe only. Comparison of muon multiplicity was made: 1) between the two generators, 2) between different primaries for each generator.
 
-Since the threshold energy of muon detector of GRAPES-3 experiment is 1(Sec($\theta$)) GeV ]\cite{hayashi} for muons incident on the detector with zenith angle $\theta$ (with coverage upto 45$^\circ$), in simulations also the muons with energy greater 1(Sec($\theta$)) GeV were counted. Table \ref{tab:muon_multiplicity} shows the variation of median muon multiplicity with changing primaries, primary energies, and with different generators. 
+Since the threshold energy of muon detector of GRAPES-3 experiment is 1(Sec($\theta$)) GeV ]\cite{hayashi} for muons incident on the detector with zenith angle $\theta$ (with coverage upto 45$^\circ$), in simulations also the muons with energy greater 1(Sec($\theta$)) GeV were counted. Table \ref{tab:muon_multiplicity} shows the variation of muon multiplicity with changing primaries, primary energies, and with different generators. 
 
 \begin{table}
 \centering
@@ -216,7 +209,7 @@ N & 12132 & 29.2 & 12337 & 28.7 & 1.7\\
 Fe & 13874 & 47.7 & 14284 & 49.0 & 3.0\\
 \hline
 \end{tabular}
-\caption{Median muon multiplicity at 10 TeV, 100 TeV, and 1000 TeV. Column 3 and 5 show the percentage increase in muon multiplicity of different primaries w.r.t. H of respective generators. Column "S vs Q" shows the percentage increase in muon multiplicity in QGSJETII-FLUKA w.r.t. that of SIBYLL-FLUKA.\label{tab:muon_multiplicity}}
+\caption{Muon multiplicity at 10 TeV, 100 TeV, and 1000 TeV. Column 3 and 5 show the percentage increase in muon multiplicity of different primaries w.r.t. H of respective generators. Column "S vs Q" shows the percentage increase in muon multiplicity in QGSJETII-FLUKA w.r.t. that of SIBYLL-FLUKA.\label{tab:muon_multiplicity}}
 \end{table}
 
 Table \ref{tab:muon_multiplicity} shows that QGSJETII-FLUKA gives slightly higher muon multiplicity as compared to SIBYLL-FLUKA and the difference increases with mass of primary. As the energy increases from 10 TeV to 1000 TeV, the difference in muon multiplicity of two generators decrease. Figure \ref{fig:sibyllmm} and Figure \ref{fig:qgsiimm} show the muon multiplicity distributions  at different primary energies.
@@ -263,7 +256,7 @@ Table \ref{tab:muon_multiplicity} shows that QGSJETII-FLUKA gives slightly highe
 \end{figure}
 
 
-Monoenergeric proton induced showers with zenith angle = 0$^\circ$ were simulated using generators of CORSIKA-6.99, namely SIBYLL 2.1 and QGSJETII-03, at energies: 10 TeV, 100 TeV, and 1000 TeV. Table \ref{tab:muon_multiplicity_lhc} shows that the difference between median muon multiplicity of SIBYLL- and QGSJETII-FLUKA is more in pre-LHC as compared to post-LHC generators. In other words, post-LHC generators are expected to give relatively close results in shower analysis as compared to pre-LHC generators. Column 3 and column 5 of the Table \ref{tab:muon_multiplicity_lhc} show that the difference of median muon multiplicity between pre- and post-LHC generators is higher for more massive primaries. 
+Monoenergeric proton induced showers with zenith angle = 0$^\circ$ were simulated using generators of CORSIKA-6.99, namely SIBYLL 2.1 and QGSJETII-03, at energies: 10 TeV, 100 TeV, and 1000 TeV. Table \ref{tab:muon_multiplicity_lhc} shows that the difference between muon multiplicity of SIBYLL- and QGSJETII-FLUKA is more in pre-LHC as compared to post-LHC generators. In other words, post-LHC generators are expected to give relatively close results in shower analysis as compared to pre-LHC generators. Column 3 and column 5 of the Table \ref{tab:muon_multiplicity_lhc} show that the difference of muon multiplicity between pre- and post-LHC generators is higher for more massive primaries. 
 
 
 \begin{table}
@@ -293,10 +286,10 @@ Pre-LHC & 7866 &  & 8327 & & 5.9\\
 Post-LHC & 9393 & 19.4 & 9586 & 15.1 & 2.1\\
 \hline
 \end{tabular}
-\caption{Median muon multiplicity at 10 TeV, 100 TeV, and 1000 TeV using pre-LHC and post-LHC generators. Column 3 and 5 represents the percentage increase in muon multiplicity of post-LHC hadronic generators w.r.t. that of pre-LHC hadronic generators. Column 6 represents the percentage increase in muon multiplicity of QGSJETII-FLUKA w.r.t. that of SIBYLL-FLUKA.\label{tab:muon_multiplicity_lhc}}
+\caption{Muon multiplicity at 10 TeV, 100 TeV, and 1000 TeV using pre-LHC and post-LHC generators. Column 3 and 5 represents the percentage increase in muon multiplicity of post-LHC hadronic generators w.r.t. that of pre-LHC hadronic generators. Column 6 represents the percentage increase in muon multiplicity of QGSJETII-FLUKA w.r.t. that of SIBYLL-FLUKA.\label{tab:muon_multiplicity_lhc}}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{subfigure}{0.32\textwidth}
 \includegraphics[width=0.9\linewidth, height=3cm]{sibyll-lhc-mm10} 
 \caption{10 TeV}
@@ -316,9 +309,7 @@ Post-LHC & 9393 & 19.4 & 9586 & 15.1 & 2.1\\
 \label{fig:lhc_multiplicity_sibyll}
 \end{figure}
 
-
-
-\begin{figure}
+\begin{figure}[h]
 \begin{subfigure}{0.32\textwidth}
 \includegraphics[width=0.9\linewidth, height=3cm]{qgsii-lhc-mm10} 
 \caption{10 TeV}
@@ -339,7 +330,7 @@ Post-LHC & 9393 & 19.4 & 9586 & 15.1 & 2.1\\
 \end{figure}
 
 \section{Comparison of simulations results with GRAPES-3 data}
-Study of monoenergetic showers was done to see the behaviour of different generators for different primary energies and primary types. For comparison with detector data, the pre-existing shower data was used which was generated using SIBYLL-2.1 (CORSIKA-7.41). The data was generated for the energy range of 1 TeV to 3000 TeV, in 15 logarithmic energy bins of bin width = 0.2. 999 files were generated in each energy bin with energy cuts of 50 MeV, 10 MeV, 1MeV, and 1MeV for hadrons, muons, electrons, and photons respectively. During the analysis of data for this study, events from bin 10 - bin 15 were used. There were 999 files for each energy bin and each file had 10 showers. Each shower was used 10 times, with it's core randomized, to increase the statistics. The spectrum was produced using this data with spectral index of -2.7. The number of events used from each bin are shown in Table \ref{tab:binning}. 
+Study of monoenergetic showers was done to see the behaviour of different generators for different primary energies and primary types. For comparison with detector data, the pre-existing shower data was used which was generated using SIBYLL-2.1 (CORSIKA-7.41). The data was generated for the energy range of 10 TeV to 3000 TeV, in 18 logarithmic energy bins of bin width = 0.2. A total of 999 files were generated in each energy bin with energy cuts of 50 MeV, 10 MeV, 1MeV, and 1MeV for hadrons, muons, electrons, and photons respectively. During the analysis of data for this study, events from bin 10 - bin 15 were used. There were 999 files for each energy bin and each file had 10 showers. Each shower was used 10 times, with it's core randomized, to increase the statistics. The spectrum was produced using this data with spectral index of -2.7. The number of events used from each bin are shown in Table \ref{tab:binning}. 
 
 \begin{table}[h]
 \centering
@@ -347,9 +338,9 @@ Study of monoenergetic showers was done to see the behaviour of different genera
 \hline
 Bin No. & Energy Range (TeV) & No. of events analysed  \\ 
 \hline
-10 & 63.10 - 100 & 99900  \\ 
+10 & 63.10 - 100.00 & 99900  \\ 
 \hline
-11 & 100 - 158.49 & 45700  \\
+11 & 100.00 - 158.49 & 45700  \\
 \hline
 12 & 158.49 - 251.19 & 20900 \\
 \hline
@@ -357,20 +348,20 @@ Bin No. & Energy Range (TeV) & No. of events analysed  \\
 \hline
 14 & 398.11 - 630.96 & 4400 \\
 \hline
-15 & 630.96 -1000 & 2000 \\
+15 & 630.96 - 1000.0 & 2000 \\
 \hline
 \end{tabular}
 \caption{Number of events analysed from each energy bin}
 \label{tab:binning}
 \end{table}
 
-The core of each shower was randomized in a circular radius  = 150 m around the array center. Then only those showers were processed which fell inside the fiducial area of array (shown by dashed line in Figure \ref{fig:array-map}), and satisfied trigger0 and trigger1 condition of detector array\cite{gupta}. In this work, analysis code used to analyze the simulated showers was improved. The code now can detect the muons hitting individual layers of the muon detector. If muon hits the following layers: layer 0 and layer 2 , or layer 1 and layer 3, or all layers , the muon hit is considered. Only those muons were counted which had kinetic energy greater than 1(Sec($\theta$)) GeV on the muon detector surface. Then, the muon multiplicity spectrum was created for shower size (N$_e$) varying from 10$^3$ to 10$^7$ with bin width = 10$^{0.5}$. 
+The core of each shower was randomized in a circular radius  = 150 m around the array center. Then only those showers were processed which fell inside the fiducial area of array (shown by dashed line in Figure \ref{fig:array-map}), and satisfied trigger-0 and trigger-1 condition of detector array\cite{gupta}. In this work, analysis code used to analyze the simulated showers was modified and updated. The code now can detect the muons hitting individual layers of the muon detector. If muon hits the following layers: layer 0 and layer 2 , or layer 1 and layer 3, or all layers , the muon hit is considered. Only those muons were counted which had kinetic energy greater than 1(Sec($\theta$)) GeV on the muon detector surface. Then, the muon multiplicity spectrum was created for shower size (N$_e$) varying from 10$^3$ to 10$^7$ with bin width = 10$^{0.5}$. 
 
-GRAPES-3 data of year 2014 (3 January to 30 December) was analysed and MMDs were created for each size bin. This spectrum was compared to that of GRAPES-3 data, for each bin. Figure \ref{fig:mmbin} shows the normalized MMDs for three differential shower size bins. From previous observations, it's known that the shower size 10$^{4.0}$ corresponds to  primary energy $\sim$50 TeV. and shower size 10$^{5.5}$ corresponds to primary energy $\sim$1000 TeV. Hence, MMD of only these shower size bins are compared. 
+GRAPES-3 data of year 2014 (3 January to 30 December) was analysed and MMDs were created for each size bin. This spectrum was compared to that of GRAPES-3 data, for each bin. Figure \ref{fig:mmbin} shows the normalized MMDs for three differential shower size bins. From previous observations, it's known that the shower size 10$^{4.0}$ corresponds to  primary energy $\sim$50 TeV. and shower size 10$^{5.5}$ corresponds to primary energy $\sim$1000 TeV. Hence, MMD of only these shower size bins were compared. 
 
-For higher muon multiplicities in either of the three plots, the statistics of simulation data are not very good. This was expected because the muon multiplicity of experimental data also has contribution from other type of primaries. As shown by Figure \ref{fig:sibyllmm}m the lower values of muon multiplicity are dominated by proton. Therefore, in Figure \ref{fig:mmbin}, we compare the region of low muon multiplicities i.e. region around the peak. 
+For higher muon multiplicities in either of the three plots in Figure \ref{fig:mmbin}, the statistics of simulation data is insufficient. This was expected because the muon multiplicity of experimental data also has contribution from other type of primaries. As shown in Figure \ref{fig:sibyllmm}, the lower values of muon multiplicity are dominated by proton. Therefore, in Figure \ref{fig:mmbin}, we compare the region of low muon multiplicities i.e. region around the peak. 
 
-The position of the peak of simulation data in Figure \ref{fig:mmbin2} matches to that of GRAPES-3 data. For higher size bins, the position peaks of the two distributions do not match but the difference is not very large. For higher shower size bins, the distributions from poor statistics. This is expected to improve with the analysis of post-LHC spectrum data because as was shown earlier, SIBYLL-2.3c produces upto $\sim$ 19 \% more muons w.r.t to SIBYLL-2.1. 
+The position of the peak of simulation data in Figure \ref{fig:mmbin2} matches to that of GRAPES-3 data. For higher size bins, the position peaks of the two distributions do not match very well because of fluctuations. For higher shower size bins, the distributions suffer from poor statistics. This is expected to improve with the analysis of post-LHC spectrum data because as was shown earlier, SIBYLL-2.3c produces upto $\sim$ 19 \% more muons w.r.t to SIBYLL-2.1. 
 
 \begin{figure}[h]
 \begin{subfigure}{0.32\textwidth}
@@ -392,16 +383,16 @@ The position of the peak of simulation data in Figure \ref{fig:mmbin2} matches t
 \label{fig:mmbin}
 \end{figure}
 
-\section{Summary}
+\section{Discussions and Summary}
 
 Two hadronic interaction generators from CORSIKA 7.69 simulaton package: SIBYLL-2.3c and QGSJETII-04, were compared on the basis of muon content produced by each generator. Low energy hadronic interactions were treated by FLUKA-2011. MMDs of monoenenergetic showers with zenith angle = 0$^\circ$, induced by H, He, N, Al, and Fe at energies$-$10 TeV, 100 TeV, and 1000 TeV were compared. Muons produced by QGSJETII-FLUKA were found to be 1.7\% to 7.3\% higher than  that of SIBYLL-FLUKA. The difference between muon content of the two generators decreased with increasing primary energy. For each primary energy, the difference between the two generators increased as the primary became more massive.
 
 MMDs of monoenergetic proton initiated showers simulated using post-LHC generators (SIBYLL 2.3c and QGSJETII-04) were  also compared with that of pre-LHC generators (SIBYLL-2.1 and QGSJETII-03 of CORSIKA-6.99). Proton iniated showers were simulated at energies: 10 TeV, 100 TeV, and 1000 TeV using above-mentioned post-LHC and pre-LHC generators. SIBYLL 2.3c produced 12.3\% to 19.4\% higher than that of SIBYLL-2.1. QGSJETII-03 produced 5.6\% to 15.1\% more muons than that of SIBYLL-2.1. Among pre-LHC generators, QGSJETII-03 produced 5.9\% to 9.2\% more muons than that of SIBYLL-2.1. Among post-LHC generators, QGSJETII-04 produced 1.7\% to 2.7\% more muons than that of SIBYLL-2.3c. Thus, the difference between muon content produced by QGSJETII and SIBYLL has decreased after tuning of the generator parameters to the LHC data.
 
-Proton initiated showers with primary energy $63.1\times10^{12}$ eV $ < $ E $<1000\times10^{12}$ eV, and zenith angle $0^\circ<\theta<25^\circ$ were analysed. The muon multiplicity distribution for differential shower size bins was compared with data recorded by the GRAPES-3 detector in the year 2014 (3 January to 30 December). The data close to the peaks, which was most relevant for protons' contribution to GRAPES-3 data, of the distribution matched well with that of GRAPES-3 data. The difference near the peak regions increased with increasing shower size because of poor statistics of simulated data. This distribution of simulated data is expected to improve with the analysis of post-LHC (SIBYLL 2.3c) spectrum data. 
+Proton initiated showers with primary energy $63.1\times10^{12}$ eV $ < $ E $<1000\times10^{12}$ eV, and zenith angle $0^\circ<\theta<25^\circ$ were analysed. The muon multiplicity distribution for differential shower size bins was compared with data recorded by the GRAPES-3 detector in the year 2014 (3 January to 30 December). The lower multiplicity region (peak region) of muon multiplicity distribution was expected to be relevant for proton's contribution to GRAPES-3 data. That region of simulation MMD was in agreement with that of GRAPES-3 data however, there were fluctuations due to insufficient statistics in simulation data. The difference near the peak regions increased with increasing shower size because of poor statistics of simulated data. This distribution of simulated data is expected to improve with the analysis of post-LHC (SIBYLL 2.3c) spectrum data for which work is currently in progress.
 
 \section{Acknowledgments}
-I thank Dr. Pravata K. Mohanty for his invaluable guidance through out this work. I thank my GRAPES-3 group members: Mr. B. Hari Haran, Mr. Fahim Varsi, Mr. Diptiranjan Pattanaik, Ms. Medha Chakraborty, and Mr. Meeran Zuberi for helping me out whenever I faced problems with the data analysis. I thank Mr. Samuel D. Morris for providing technical help to keep my work going, as he was handling the server I was working on.  
+I thank Dr. Pravata K. Mohanty for his invaluable guidance through out this work. I thank my GRAPES-3 group members: Mr. B. Hari Haran, Mr. Fahim Varsi, Mr. Diptiranjan Pattanaik, Ms. Medha Chakraborty, and Mr. Meeran Zuberi for helping me out whenever I faced problems with data analysis. I thank Mr. Samuel D. Morris for providing technical help to keep my work going, as he was handling the server I was working on.  
 
 \begin{thebibliography}{9}
 
